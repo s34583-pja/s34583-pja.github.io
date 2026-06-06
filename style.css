@@ -1,0 +1,79 @@
+/* GLOBAL SETTINGS */
+body {
+    margin: 0;
+    padding: 0 5%;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* NAVIGATION */
+.top-menu {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid #000000;
+}
+
+.top-menu a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+/* HERO SECTION - PINK ACCENT BLOCK */
+.hero-section {
+    padding: 100px 50px;
+    background-color: #FFD1DC; 
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+.hero-section h1 {
+    font-size: 120px;
+    font-weight: 800;
+    margin: 0;
+    line-height: 0.9;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+}
+
+.hero-section p {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #000000;
+    max-width: 500px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* FOOTER */
+footer {
+    padding: 40px 0;
+    border-top: 1px solid #000000;
+    margin-top: 100px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #000000;
+}
