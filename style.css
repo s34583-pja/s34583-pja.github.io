@@ -1,386 +1,53 @@
 /* =========================================
-   GLOBAL SETTINGS & BRUTALIST GRID BASE
+   GLOBAL SETTINGS
    ========================================= */
-* { 
-    box-sizing: border-box; 
-}
-
-body {
-    margin: 0;
-    padding: 0; 
-    font-family: 'Poppins', sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-    -webkit-font-smoothing: antialiased;
-    width: 100%;
-    overflow-x: hidden; 
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Poppins', sans-serif; background-color: #ffffff; color: #000000; overflow-x: hidden; }
 
 /* =========================================
-   HEADER & NAVIGATION
+   SITE HEADER & NAVIGATION
    ========================================= */
-.site-header {
-    display: grid;
-    grid-template-columns: 1fr 3fr; 
-    border-bottom: 1px solid #000000;
-}
-
-.logo-link {
-    padding: 20px 30px;
-    font-weight: 800;
-    font-size: 24px;
-    color: #000000;
-    text-decoration: none;
-    border-right: 1px solid #000000;
-    display: flex;
-    align-items: center;
-}
-
-.nav-links {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.outline-link {
-    padding: 15px 20px;
-    font-size: 45px; 
-    font-weight: 400; 
-    color: transparent; 
-    -webkit-text-stroke: 1px #000000; 
-    text-decoration: none;
-    border-right: 1px solid #000000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.outline-link:last-child {
-    border-right: none;
-}
-
-.outline-link:hover {
-    color: #FFCDE6; 
-    -webkit-text-stroke: 1px #FFCDE6;
-}
+.site-header { display: grid; grid-template-columns: 1fr 3fr; border-bottom: 1px solid #000000; }
+.logo-link { padding: 20px 30px; font-weight: 800; font-size: 24px; color: #000000; text-decoration: none; border-right: 1px solid #000000; display: flex; align-items: center; }
+.nav-links { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+.outline-link { padding: 15px 20px; font-size: 45px; font-weight: 400; color: transparent; -webkit-text-stroke: 1px #000000; text-decoration: none; border-right: 1px solid #000000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+.outline-link:hover { color: #FFCDE6; -webkit-text-stroke: 1px #FFCDE6; }
 
 /* =========================================
-   KEYFRAMES FOR WINGS "FLAPPING" ANIMATION
+   MAIN LAYOUT (HERO)
    ========================================= */
-/* Increased flap angle to 25 degrees for a much stronger, visible effect */
-@keyframes flapLeft {
-    0% { transform: translateY(-50%) rotate(0deg); }
-    50% { transform: translateY(-50%) rotate(-25deg); } 
-    100% { transform: translateY(-50%) rotate(0deg); }
-}
+.hero-banner { background-color: #FFCDE6; border-bottom: 1px solid #000000; padding: 80px 20px; text-align: center; }
+.giant-title { font-size: 15vw; font-weight: 800; line-height: 0.85; letter-spacing: -5px; }
 
-@keyframes flapRight {
-    0% { transform: translateY(-50%) rotate(0deg); }
-    50% { transform: translateY(-50%) rotate(25deg); }
-    100% { transform: translateY(-50%) rotate(0deg); }
-}
-
-/* Shimmering gradient animation for the titles */
-@keyframes shimmerGradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+.info-grid { display: grid; grid-template-columns: 2fr 2fr 1fr; border-bottom: 1px solid #000000; }
+.info-cell { padding: 30px; border-right: 1px solid #000000; }
+.cell-label { font-size: 12px; font-weight: 600; display: block; margin-bottom: 20px; text-transform: uppercase; }
+.info-cell p { font-size: 16px; line-height: 1.5; }
+.explore-link { font-size: 18px; font-weight: 600; text-decoration: none; color: #000000; text-transform: uppercase; }
 
 /* =========================================
-   INDEX.HTML SPECIFIC STYLES
+   FONTS PAGE - CENTERED GRID & WINGS
    ========================================= */
-.hero-banner {
-    background-color: #FFCDE6;
-    border-bottom: 1px solid #000000;
-    padding: 80px 20px;
-    text-align: center;
-    overflow: hidden;
-}
+.page-title-section { border-bottom: 1px solid #000000; padding: 80px 20px; text-align: center; }
+.fonts-layout-wrapper { display: grid; grid-template-columns: 1fr 1000px 1fr; align-items: center; padding: 100px 0; border-bottom: 1px solid #000000; }
 
-.giant-title {
-    font-size: 15vw; 
-    font-weight: 800;
-    margin: 0;
-    line-height: 0.85;
-    letter-spacing: -5px;
-    color: #000000;
-}
+.wing-container { width: 350px; z-index: 1; transition: transform 4s ease-in-out; }
+.wing-left { justify-self: end; }
+.wing-right { justify-self: start; transform: scaleX(-1); }
+.fonts-layout-wrapper:hover .wing-left { transform: rotate(-5deg); }
+.fonts-layout-wrapper:hover .wing-right { transform: rotate(5deg); }
+.wing-container img { width: 100%; }
 
-.info-grid {
-    display: grid;
-    grid-template-columns: 2fr 2fr 1fr;
-    border-bottom: 1px solid #000000;
-}
-
-.info-cell {
-    padding: 30px;
-    border-right: 1px solid #000000;
-}
-
-.info-cell:last-child {
-    border-right: none;
-}
-
-.cell-label {
-    font-size: 12px;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.info-cell p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 0;
-}
-
-.action-cell {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.explore-link {
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-    color: #000000;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-}
-
-.explore-link:hover {
-    color: #FFCDE6;
-}
-
-.bottom-massive-text {
-    padding: 80px 20px;
-    text-align: center;
-    border-bottom: 1px solid #000000;
-}
-
-.bottom-massive-text h2 {
-    font-size: 6vw;
-    font-weight: 400; 
-    margin: 0;
-    letter-spacing: -2px;
-}
+.content-section { width: 1000px; border-left: 1px solid #000; border-top: 1px solid #000; }
+.fonts-cross-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.font-cell { padding: 60px; border-right: 1px solid #000; border-bottom: 1px solid #000; }
+.font-name { font-size: 60px; font-weight: 800; margin-bottom: 20px; }
+.font-desc { font-size: 14px; color: #333; max-width: 300px; }
 
 /* =========================================
-   FONTS.HTML & CUSTOM.HTML TITLE SECTION
+   CUSTOM PAGE & FOOTER
    ========================================= */
-.page-title-section {
-    border-bottom: 1px solid #000000;
-    padding: 80px 20px;
-    text-align: center;
-    background: linear-gradient(-45deg, #FFCDE6, #ffffff, #FFCDE6, #e9bdcc);
-    background-size: 400% 400%;
-    animation: shimmerGradient 12s ease infinite;
-}
-
-.page-title-section h1 {
-    font-size: 6vw;
-    font-weight: 800;
-    margin: 0 0 15px 0;
-    text-transform: uppercase;letter-spacing: -2px;
-}
-
-.page-title-section p {
-    font-size: 16px;
-    max-width: 600px;
-    margin: 0 auto;
-    color: #333333;
-}
-
-/* =========================================
-   FONTS.HTML SPECIFIC (WINGS & CLEAN GRID)
-   ========================================= */
-.fonts-layout-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    border-bottom: 1px solid #000000;
-    padding: 120px 0; 
-    overflow: hidden; 
-    min-width: 1000px; /* Safe bounds to maintain proportions */
-}
-
-/* PERFECT WING POSITIONING MATH 
-   Grid is 50% wide. Half of that is 25%.
-   Margin 25% perfectly attaches the wings to the grid's walls.
-   Width 24% makes them huge but leaves 1% gap to the screen edge.
-*/
-.wing-container {
-    position: absolute;
-    top: 50%;
-    width: 24%; 
-    z-index: 1;
-    pointer-events: none;
-    opacity: 0.95; 
-    transition: opacity 0.5s ease;
-}
-
-.wing-left { 
-    right: 50%; 
-    margin-right: 25%; 
-    transform-origin: center right; 
-    transform: translateY(-50%) rotate(0deg);
-}
-
-.wing-right { 
-    left: 50%; 
-    margin-left: 25%; 
-    transform-origin: center left; 
-    transform: translateY(-50%) rotate(0deg);
-}
-
-.wing-container img {
-    width: 100%;
-    height: auto;
-}
-
-/* Triggers massive flapping animation on hover */
-.fonts-layout-wrapper:hover .wing-left {
-    animation: flapLeft 2s ease-in-out infinite;
-}
-
-.fonts-layout-wrapper:hover .wing-right {
-    animation: flapRight 2s ease-in-out infinite;
-}
-
-.fonts-layout-wrapper:hover .wing-container {
-    opacity: 1; 
-}
-
-/* CENTER CONTENT GRID */
-.content-section {
-    width: 50%; /* Strictly 50% to align with wing math */
-    margin: 0 auto; 
-    position: relative;
-    background-color: #ffffff; 
-    border: 1px solid #000000; 
-    z-index: 2; 
-}
-
-/* Interior Grid structure */
-.fonts-cross-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.font-cell {
-    padding: 80px 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-    border: none; 
-}
-
-/* Cell borders to create the clean cross */
-.font-cell:nth-child(1) {
-    border-right: 1px solid #000000;
-    border-bottom: 1px solid #000000;
-}
-
-.font-cell:nth-child(2) {
-    border-bottom: 1px solid #000000;
-}
-
-.font-cell:nth-child(3) {
-    border-right: 1px solid #000000;
-}
-
-/* FONT HEADERS HOVER EFFECT */
-.font-name {
-    font-size: 80px;
-    margin: 0 0 20px 0;
-    line-height: 1;
-    color: #000000;
-    cursor: default;
-    transition: all 0.3s ease;
-}
-
-.font-name:hover {
-    color: transparent;
-    -webkit-text-stroke: 1px #000000;
-}
-
-.font-description {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #333333;
-    max-width: 350px;
-    margin: 0;
-}
-
-/* SPECIFIC GOOGLE FONTS TYPOGRAPHY */
-.font-ballet { font-family: 'Ballet', cursive; font-weight: 400; text-transform: none; }
-.font-urbanist { font-family: 'Urbanist', sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -2px; }
-.font-cormorant { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-style: italic; text-transform: none; }
-.font-spacemono { font-family: 'Space Mono', monospace; font-weight: 700; text-transform: uppercase; font-size: 60px; letter-spacing: -3px; }
-
-/* =========================================
-   CUSTOM.HTML SPECIFIC (PORTFOLIO GRID)
-   ========================================= */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-bottom: 1px solid #000000;
-}
-
-.portfolio-item {
-    padding: 40px;
-    border-right: 1px solid #000000;
-    display: flex;
-    flex-direction: column;
-}
-
-.portfolio-item:nth-child(even) {
-    border-right: none;
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: auto;
-    border: 1px solid #000000;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
-}
-
-.portfolio-item img:hover {
-    transform: scale(1.02);
-}
-
-.item-description {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-}/* =========================================
-   FOOTER
-   ========================================= */
-.site-footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.footer-cell {
-    padding: 30px;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-right: 1px solid #000000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-cell:last-child {
-    border-right: none;
-}
+.portfolio-grid { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #000000; }
+.portfolio-item { padding: 40px; border-right: 1px solid #000000; }
+.site-footer { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #000; }
+.footer-cell { padding: 30px; font-size: 12px; font-weight: 600; text-transform: uppercase; border-right: 1px solid #000000; text-align: center; }
