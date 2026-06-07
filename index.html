@@ -4,29 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typography & Form | Home</title>
-    <!-- Connecting the font and the stylesheet -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="top-menu">
-        <a href="index.html">About Typography</a>
-        <a href="fonts.html">Google Fonts</a>
-        <a href="custom.html">Custom</a>
-        <a href="life.html">Applications</a>
-    </nav>
+    <header class="site-header">
+        <a href="index.html" class="logo-link">Typography & Form</a>
+        <nav class="nav-links">
+            <a href="fonts.html" class="outline-link">Fonts</a>
+            <a href="custom.html" class="outline-link">Custom</a>
+            <a href="life.html" class="outline-link">Apps</a>
+        </nav>
+    </header>
 
-    <main class="hero-section">
-        <h1>Typography & Form</h1>
-        <p>Typography is the silent voice of design. It is the architectural discipline of arranging type to make written language legible, readable, and appealing when displayed.</p>
-        <p style="margin-top: 20px;">This project explores the fundamental structures of letterforms, the anatomy of glyphs, and the profound impact that typographic choices have on brand perception and visual hierarchy.</p>
+    <main>
+        <section class="hero-banner">
+            <h1 class="giant-title">Variable<br>Font</h1>
+        </section>
+
+        <section class="info-grid">
+            <div class="info-cell">
+                <span class="cell-label">▼ Concept</span>
+                <p>Typography is the silent voice of design. It is the architectural discipline of arranging type to make written language legible and appealing.</p>
+            </div>
+            <div class="info-cell">
+                <span class="cell-label">▼ Research</span>
+                <p>This project explores the fundamental structures of letterforms, the anatomy of glyphs, and the impact of typographic choices on visual hierarchy.</p>
+            </div>
+            <div class="info-cell action-cell">
+                <a href="fonts.html" class="explore-link">Explore</a>
+            </div>
+        </section>
+        
+        <section class="bottom-massive-text">
+            <h2>Structures are building</h2>
+        </section>
     </main>
-    
-    <footer>
-        <div class="footer-content">
-            <p>© 2026 Anastasia Semerenko / s34583 / PJATK Project</p>
-        </div>
+
+    <footer class="site-footer">
+        <div class="footer-cell">© 2026 Anastasia Semerenko</div>
+        <div class="footer-cell">S34583</div>
+        <div class="footer-cell">PJATK Project</div>
     </footer>
 
 </body>

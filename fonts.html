@@ -9,46 +9,63 @@
 </head>
 <body>
 
-    <nav class="top-menu">
-        <a href="index.html">About Typography</a>
-        <a href="fonts.html">Google Fonts</a>
-        <a href="custom.html">Custom</a>
-        <a href="life.html">Applications</a>
-    </nav>
+    <header class="site-header">
+        <a href="index.html" class="logo-link">Typography & Form</a>
+        <nav class="nav-links">
+            <a href="fonts.html" class="outline-link">Fonts</a>
+            <a href="custom.html" class="outline-link">Custom</a>
+            <a href="life.html" class="outline-link">Apps</a>
+        </nav>
+    </header>
 
-    <main class="content-section">
-        <h1>Google Fonts</h1>
-        <p>A curated selection of typographic styles, demonstrating variable characteristics and visual contrast.</p>
+    <main>
+        <section class="page-title-section">
+            <h1>Google Fonts</h1>
+            <p>A curated selection of typographic styles, demonstrating variable characteristics and visual contrast.</p>
+        </section>
 
-        <div class="fonts-cross-grid">
+        <div class="fonts-layout-wrapper">
             
-            <div class="font-cell border-right border-bottom">
-                <h2 class="font-name font-ballet">Ballet</h2>
-                <p class="font-description">An elegant, variable script font designed by Maximiliano Sproviero. It offers extreme contrast and graceful curves, perfect for sophisticated visual identities.</p>
+            <div class="wing-container wing-left">
+                <img src="wing_left.svg" alt="Graphic Wing Left">
+            </div>
+            
+            <div class="wing-container wing-right">
+                <img src="wing_right.svg" alt="Graphic Wing Right">
             </div>
 
-            <div class="font-cell border-bottom">
-                <h2 class="font-name font-urbanist">Urbanist</h2>
-                <p class="font-description">A low-contrast, geometric sans-serif inspired by Modernist typography. Its pure forms and balanced spacing make it highly legible across digital interfaces.</p>
-            </div>
+            <div class="content-section">
+                <div class="fonts-cross-grid">
+                    
+                    <div class="font-cell">
+                        <h2 class="font-name font-ballet">Ballet</h2>
+                        <p class="font-description">An elegant, variable script font designed by Maximiliano Sproviero. It offers extreme contrast and graceful curves.</p>
+                    </div>
 
-            <div class="font-cell border-right">
-                <h2 class="font-name font-cormorant">Cormorant</h2>
-                <p class="font-description">A classic serif typeface inspired by the 16th-century legacy of Claude Garamont. It features elegant curves and sharp counters for a refined editorial aesthetic.</p>
-            </div>
+                    <div class="font-cell">
+                        <h2 class="font-name font-urbanist">Urbanist</h2>
+                        <p class="font-description">A low-contrast, geometric sans-serif inspired by Modernist typography. Pure forms and balanced spacing.</p>
+                    </div>
 
-            <div class="font-cell">
-                <h2 class="font-name font-spacemono">Space Mono</h2>
-                <p class="font-description">An original fixed-width type family tailored for editorial use. It combines geometric structure with industrial details, adding a tech-driven edge.</p>
-            </div>
+                    <div class="font-cell">
+                        <h2 class="font-name font-cormorant">Cormorant</h2>
+                        <p class="font-description">A classic serif typeface inspired by the 16th-century legacy of Claude Garamont. Elegant curves and sharp counters.</p>
+                    </div>
 
+                    <div class="font-cell">
+                        <h2 class="font-name font-spacemono">Space Mono</h2>
+                        <p class="font-description">An original fixed-width type family tailored for editorial use. Combines geometric structure with tech details.</p>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p>© 2026 Anastasia Semerenko / S34583 / PJATK Project</p>
-        </div>
+    <footer class="site-footer">
+        <div class="footer-cell">© 2026 Anastasia Semerenko</div>
+        <div class="footer-cell">S34583</div>
+        <div class="footer-cell">PJATK Project</div>
     </footer>
 
 </body>
