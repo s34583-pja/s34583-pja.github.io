@@ -749,3 +749,54 @@ body {
     15% { opacity: 1; }
     100% { transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.5) rotate(var(--rot)); opacity: 0; }
 }
+/* Styling for the Google Fonts info section */
+.fonts-glamour-section {
+    padding: 120px 20px;
+    background: #ffffff;
+    border-top: 1px solid #000;
+}
+
+.content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.glamour-title {
+    font-size: 60px;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 60px;
+    text-align: center;
+    color: #000;
+}
+
+.text-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.lead-text {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.4;
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+}
+
+.text-grid p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+    .text-grid {
+        grid-template-columns: 1fr;
+    }
+    .glamour-title {
+        font-size: 40px;
+    }
+}
