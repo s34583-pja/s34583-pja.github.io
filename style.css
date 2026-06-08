@@ -1,6 +1,4 @@
-/* =========================================
-   GLOBAL SETTINGS & BRUTALIST GRID
-   ========================================= */
+
 * { 
     box-sizing: border-box; 
 }
@@ -14,9 +12,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* =========================================
-   HEADER & NAVIGATION
-   ========================================= */
+
 .site-header {
     display: grid;
     grid-template-columns: 1fr 3fr; 
@@ -62,11 +58,7 @@ body {
     -webkit-text-stroke: 1px #FFCDE6;
 }
 
-/* =========================================
-   KEYFRAMES FOR ANIMATIONS (The Magic Inside)
-   ========================================= */
 
-/* Subtly flaps wings inwards/outwards */
 @keyframes subtleFlap {
     0% { transform: translateY(-50%) rotate(0deg); }
     50% { transform: translateY(-50%) rotate(5deg); }
@@ -79,14 +71,14 @@ body {
     100% { transform: translateY(-50%) rotate(0deg); }
 }
 
-/* Slowly animates a shimmering background gradient */
+
 @keyframes shimmerGradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Brutalist Outline Flash Animation */
+
 @keyframes brutalistFlash {
     0%, 40% {
         color: #000000;
@@ -110,15 +102,13 @@ body {
     }
 }
 
-/* Seamless Marquee Animation */
+
 @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); } 
 }
 
-/* =========================================
-   INDEX.HTML SPECIFIC STYLES
-   ========================================= */
+
 .hero-banner {
     background-color: #FFCDE6;
     border-bottom: 1px solid #000000;
@@ -198,7 +188,7 @@ body {
     letter-spacing: -2px;
 }
 
-/* Dark Statement Block */
+
 .dark-statement {
     background-color: #111111;
     color: #ffffff;
@@ -223,11 +213,11 @@ body {
     margin: 0;
 }
 
-/* Background Utilities */
+
 .bg-grey { background-color: #F4F4F4; }
 .text-grey { color: #AAAAAA; }
 
-/* Seamless Marquee Layout */
+
 .marquee-wrapper {
     overflow: hidden;
     white-space: nowrap;
@@ -247,11 +237,7 @@ body {
     color: #333333;
 }
 
-/* =========================================
-   FONTS.HTML & CUSTOM.HTML TITLE SECTION
-   ========================================= */
 
-/* Shimmering Animated Gradient Header */
 .page-title-section {
     border-bottom: 1px solid #000000;
     padding: 80px 20px;
@@ -278,9 +264,7 @@ body {
     color: #333333;
 }
 
-/* =========================================
-   FONTS.HTML SPECIFIC (WINGS & INTERACTIVE GRID)
-   ========================================= */
+
 .fonts-layout-wrapper {
     display: flex;
     justify-content: center;
@@ -292,7 +276,7 @@ body {
     overflow: visible; 
 }
 
-/* Fixed Grid Container */
+
 .content-section {
     width: 55%; 
     min-width: 700px;
@@ -302,7 +286,7 @@ body {
     z-index: 2; 
 }
 
-/* Wing Visibility, Size, and Animation */
+
 .wing-container {
     position: absolute;
     top: 50%;
@@ -324,7 +308,7 @@ body {
     height: auto;
 }
 
-/* Interactive Wing Action */
+
 .wing-left { 
     left: -5%; 
     animation: subtleFlap 2.5s ease-in-out infinite;
@@ -335,7 +319,7 @@ body {
     animation: subtleFlapMirrored 2.5s ease-in-out infinite; 
 }
 
-/* Clean Interior Grid Structure */
+
 .fonts-cross-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -383,14 +367,14 @@ body {
     margin: 0;
 }
 
-/* Specific Google Fonts Typography */
+
 .font-ballet { font-family: 'Ballet', cursive; font-weight: 400; text-transform: none; }
 .font-urbanist { font-family: 'Urbanist', sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -2px; }
 .font-cormorant { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-style: italic; text-transform: none; }
 .font-spacemono { font-family: 'Space Mono', monospace; font-weight: 700; text-transform: uppercase; font-size: 60px; letter-spacing: -3px; }
 
 
-/* --- BRAND ANALYSIS ZIG-ZAG GRID --- */
+
 .brand-analysis-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -415,14 +399,14 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Reversing the order for even rows to create the zig-zag effect */
+
 .brand-analysis-row:nth-child(even) .brand-image-col {
-    order: -1; /* Moves the image to the left side */
+    order: -1; 
     border-left: none;
     border-right: 1px solid #000000;
 }
 
-/* Forces all images to act as perfect responsive squares */
+
 .brand-image-col img {
     width: 100%;
     height: 100%;
@@ -448,12 +432,12 @@ body {
 }
 
 .brand-link {
-    align-self: flex-start; /* Keeps the button from stretching */
+    align-self: flex-start; 
     text-decoration: none;
     text-align: center;
 }
 
-/* --- PERSONAL IDENTITY SECTION --- */
+
 .personal-identity-row {
     padding: 120px 40px;
     background-color: #ffffff;
@@ -470,7 +454,7 @@ body {
     max-width: 600px;
 }
 
-/* Target the SVG to make sure it scales nicely */
+
 .svg-container svg {
     width: 100%;
     height: auto;
@@ -480,7 +464,7 @@ body {
     max-width: 900px;
 }
 
-/* Mobile adaptation for the grid */
+
 @media (max-width: 900px) {
     .brand-analysis-row {
         grid-template-columns: 1fr;
@@ -498,9 +482,7 @@ body {
     }
 }
 
-/* =========================================
-   FOOTER
-   ========================================= */
+
 .site-footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -522,9 +504,7 @@ body {
 }
 
 
-/* =========================================
-   EDITORIAL ARTICLE SECTION
-   ========================================= */
+
 .editorial-article {
     padding: 120px 40px;
     background-color: #ffffff;
@@ -546,7 +526,7 @@ body {
 }
 
 .article-columns {
-    max-width: 1000px; /* Идеально совпадает с шириной сетки на странице fonts.html */
+    max-width: 1000px; 
     column-count: 2;
     column-gap: 60px;
     font-size: 18px;
@@ -559,7 +539,7 @@ body {
     margin-bottom: 25px;
 }
 
-/* Огромная заглавная буква в начале текста (Drop Cap) */
+
 .first-letter {
     float: left;
     font-size: 90px;
@@ -570,7 +550,7 @@ body {
     color: #000000;
 }
 
-/* Адаптация для мобильных экранов: текст в одну колонку */
+
 @media (max-width: 768px) {
     .article-columns {
         column-count: 1;
@@ -579,9 +559,7 @@ body {
         font-size: 40px;
     }
 }
-/* =========================================
-   UPDATED INTERACTIVE COLOR MODULE (Aesthetic & Contrast)
-   ========================================= */
+
 .interactive-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -601,25 +579,25 @@ body {
 .letter-square {
     width: 250px;
     height: 250px;
-    background-color: #F4F4F4; /* Default grey background */
+    background-color: #F4F4F4; 
     border: 1px solid #000000;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
-    transition: background-color 0.3s ease; /* Smooth background change */
+    transition: background-color 0.3s ease; 
 }
 
 .changing-letter {
     font-size: 180px;
     font-weight: 800;
     line-height: 1;
-    color: transparent; /* Initially transparent to show stroke */
-    -webkit-text-stroke: 2px #000000; /* Black outline (image 3) */
-    transition: color 0.3s ease, -webkit-text-stroke 0.3s ease; /* Smooth text changes */
+    color: transparent; 
+    -webkit-text-stroke: 2px #000000; 
+    transition: color 0.3s ease, -webkit-text-stroke 0.3s ease; 
 }
 
-/* Base class for when the letter has a solid color, not an outline */
+
 .letter-solid {
     -webkit-text-stroke: 0px transparent;
 }
@@ -638,7 +616,7 @@ body {
 }
 
 .brutalist-btn:hover {
-    background-color: #FFCDE6; /* Brand pink on hover */
+    background-color: #FFCDE6; 
     color: #000000;
 }
 
@@ -666,14 +644,12 @@ body {
     margin: 0;
 }
 
-/* Mobile adaptation */
+
 @media (max-width: 768px) {
     .interactive-section { grid-template-columns: 1fr; }
     .interactive-visual { border-right: none; border-bottom: 1px solid #000000; }
 }
-/* =========================================
-   PERSONAL IDENTITY & HEART ANIMATION
-   ========================================= */
+
 .personal-identity-row {
     padding: 120px 20px;
     background-color: #ffffff;
@@ -689,23 +665,22 @@ body {
     cursor: crosshair;
     margin-bottom: 80px;
     z-index: 10;
-    width: 100%; /* Контейнер на всю ширину */
+    width: 100%; 
     display: flex;
-    justify-content: center; /* Центрируем содержимое по горизонтали */
-}
+    justify-content: center; 
 
-/* Огромный логотип строго по центру */
+
 .nesti-inline-svg {
     width: 100%;
-    max-width: 900px; /* Сделали логотип массивным */
+    max-width: 900px; 
     height: auto;
     display: block;
-    margin: 0 auto; /* Жесткое центрирование */
+    margin: 0 auto; 
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .nesti-interactive-area:hover .nesti-inline-svg {
-    transform: scale(1.03); /* Легкое увеличение при наведении */
+    transform: scale(1.03); 
 }
 
 .personal-text-clean {
@@ -728,7 +703,7 @@ body {
     margin: 0;
 }
 
-/* Магия разлетающихся сердец */
+
 .floating-heart {
     position: fixed;
     width: 25px;
@@ -749,7 +724,7 @@ body {
     15% { opacity: 1; }
     100% { transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.5) rotate(var(--rot)); opacity: 0; }
 }
-/* Styling for the Google Fonts info section */
+
 .fonts-glamour-section {
     padding: 120px 20px;
     background: #ffffff;
@@ -791,7 +766,7 @@ body {
     color: #444;
 }
 
-/* Responsive adjustments for mobile devices */
+
 @media (max-width: 768px) {
     .text-grid {
         grid-template-columns: 1fr;
