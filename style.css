@@ -1,53 +1,751 @@
 /* =========================================
-   GLOBAL SETTINGS
+   GLOBAL SETTINGS & BRUTALIST GRID
    ========================================= */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Poppins', sans-serif; background-color: #ffffff; color: #000000; overflow-x: hidden; }
+* { 
+    box-sizing: border-box; 
+}
+
+body {
+    margin: 0;
+    padding: 0; 
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+}
 
 /* =========================================
-   SITE HEADER & NAVIGATION
+   HEADER & NAVIGATION
    ========================================= */
-.site-header { display: grid; grid-template-columns: 1fr 3fr; border-bottom: 1px solid #000000; }
-.logo-link { padding: 20px 30px; font-weight: 800; font-size: 24px; color: #000000; text-decoration: none; border-right: 1px solid #000000; display: flex; align-items: center; }
-.nav-links { display: grid; grid-template-columns: 1fr 1fr 1fr; }
-.outline-link { padding: 15px 20px; font-size: 45px; font-weight: 400; color: transparent; -webkit-text-stroke: 1px #000000; text-decoration: none; border-right: 1px solid #000000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
-.outline-link:hover { color: #FFCDE6; -webkit-text-stroke: 1px #FFCDE6; }
+.site-header {
+    display: grid;
+    grid-template-columns: 1fr 3fr; 
+    border-bottom: 1px solid #000000;
+}
+
+.logo-link {
+    padding: 20px 30px;
+    font-weight: 800;
+    font-size: 24px;
+    color: #000000;
+    text-decoration: none;
+    border-right: 1px solid #000000;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.outline-link {
+    padding: 15px 20px;
+    font-size: 45px; 
+    font-weight: 400; 
+    color: transparent; 
+    -webkit-text-stroke: 1px #000000; 
+    text-decoration: none;
+    border-right: 1px solid #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.outline-link:last-child {
+    border-right: none;
+}
+
+.outline-link:hover {
+    color: #FFCDE6; 
+    -webkit-text-stroke: 1px #FFCDE6;
+}
 
 /* =========================================
-   MAIN LAYOUT (HERO)
+   KEYFRAMES FOR ANIMATIONS (The Magic Inside)
    ========================================= */
-.hero-banner { background-color: #FFCDE6; border-bottom: 1px solid #000000; padding: 80px 20px; text-align: center; }
-.giant-title { font-size: 15vw; font-weight: 800; line-height: 0.85; letter-spacing: -5px; }
 
-.info-grid { display: grid; grid-template-columns: 2fr 2fr 1fr; border-bottom: 1px solid #000000; }
-.info-cell { padding: 30px; border-right: 1px solid #000000; }
-.cell-label { font-size: 12px; font-weight: 600; display: block; margin-bottom: 20px; text-transform: uppercase; }
-.info-cell p { font-size: 16px; line-height: 1.5; }
-.explore-link { font-size: 18px; font-weight: 600; text-decoration: none; color: #000000; text-transform: uppercase; }
+/* Subtly flaps wings inwards/outwards */
+@keyframes subtleFlap {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    50% { transform: translateY(-50%) rotate(5deg); }
+    100% { transform: translateY(-50%) rotate(0deg); }
+}
+
+@keyframes subtleFlapMirrored {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    50% { transform: translateY(-50%) rotate(-5deg); }
+    100% { transform: translateY(-50%) rotate(0deg); }
+}
+
+/* Slowly animates a shimmering background gradient */
+@keyframes shimmerGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Brutalist Outline Flash Animation */
+@keyframes brutalistFlash {
+    0%, 40% {
+        color: #000000;
+        -webkit-text-stroke: 0px transparent;
+    }
+    42%, 48% {
+        color: transparent;
+        -webkit-text-stroke: 4px #000000;
+    }
+    50%, 90% {
+        color: #ffffff;
+        -webkit-text-stroke: 0px transparent;
+    }
+    92%, 98% {
+        color: transparent;
+        -webkit-text-stroke: 4px #ffffff;
+    }
+    100% {
+        color: #000000;
+        -webkit-text-stroke: 0px transparent;
+    }
+}
+
+/* Seamless Marquee Animation */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
 
 /* =========================================
-   FONTS PAGE - CENTERED GRID & WINGS
+   INDEX.HTML SPECIFIC STYLES
    ========================================= */
-.page-title-section { border-bottom: 1px solid #000000; padding: 80px 20px; text-align: center; }
-.fonts-layout-wrapper { display: grid; grid-template-columns: 1fr 1000px 1fr; align-items: center; padding: 100px 0; border-bottom: 1px solid #000000; }
+.hero-banner {
+    background-color: #FFCDE6;
+    border-bottom: 1px solid #000000;
+    padding: 80px 20px;
+    text-align: center;
+    overflow: hidden;
+}
 
-.wing-container { width: 350px; z-index: 1; transition: transform 4s ease-in-out; }
-.wing-left { justify-self: end; }
-.wing-right { justify-self: start; transform: scaleX(-1); }
-.fonts-layout-wrapper:hover .wing-left { transform: rotate(-5deg); }
-.fonts-layout-wrapper:hover .wing-right { transform: rotate(5deg); }
-.wing-container img { width: 100%; }
+.giant-title {
+    font-size: 15vw; 
+    font-weight: 800;
+    margin: 0;
+    line-height: 0.85;
+    letter-spacing: -5px;
+    color: #000000;
+    animation: brutalistFlash 12s infinite; 
+}
 
-.content-section { width: 1000px; border-left: 1px solid #000; border-top: 1px solid #000; }
-.fonts-cross-grid { display: grid; grid-template-columns: 1fr 1fr; }
-.font-cell { padding: 60px; border-right: 1px solid #000; border-bottom: 1px solid #000; }
-.font-name { font-size: 60px; font-weight: 800; margin-bottom: 20px; }
-.font-desc { font-size: 14px; color: #333; max-width: 300px; }
+.info-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    border-bottom: 1px solid #000000;
+}
+
+.info-cell {
+    padding: 30px;
+    border-right: 1px solid #000000;
+}
+
+.info-cell:last-child {
+    border-right: none;
+}
+
+.cell-label {
+    font-size: 12px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.info-cell p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.action-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.explore-link {
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000000;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.explore-link:hover {
+    color: #FFCDE6;
+}
+
+.bottom-massive-text {
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 1px solid #000000;
+}
+
+.bottom-massive-text h2 {
+    font-size: 6vw;
+    font-weight: 400; 
+    margin: 0;
+    letter-spacing: -2px;
+}
+
+/* Dark Statement Block */
+.dark-statement {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 120px 20px;
+    text-align: center;
+    border-bottom: 1px solid #000000;
+}
+
+.dark-statement h2 {
+    font-size: 4vw;
+    font-weight: 300;
+    letter-spacing: -1px;
+    margin: 0 0 20px 0;
+}
+
+.dark-statement p {
+    color: #888888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Background Utilities */
+.bg-grey { background-color: #F4F4F4; }
+.text-grey { color: #AAAAAA; }
+
+/* Seamless Marquee Layout */
+.marquee-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 1px solid #000000;
+    padding: 20px 0;
+    background-color: #f4f4f4;
+    display: flex; 
+}
+
+.marquee-content {
+    display: flex;
+    flex-shrink: 0;
+    animation: marquee 20s linear infinite; 
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #333333;
+}
 
 /* =========================================
-   CUSTOM PAGE & FOOTER
+   FONTS.HTML & CUSTOM.HTML TITLE SECTION
    ========================================= */
-.portfolio-grid { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #000000; }
-.portfolio-item { padding: 40px; border-right: 1px solid #000000; }
-.site-footer { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #000; }
-.footer-cell { padding: 30px; font-size: 12px; font-weight: 600; text-transform: uppercase; border-right: 1px solid #000000; text-align: center; }
+
+/* Shimmering Animated Gradient Header */
+.page-title-section {
+    border-bottom: 1px solid #000000;
+    padding: 80px 20px;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(-45deg, #FFCDE6, #ffffff, #FFCDE6, #e9bdcc);
+    background-size: 400% 400%;
+    animation: shimmerGradient 15s ease infinite;
+}
+
+.page-title-section h1 {
+    font-size: 6vw;
+    font-weight: 800;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    color: #000000;
+}
+
+.page-title-section p {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #333333;
+}
+
+/* =========================================
+   FONTS.HTML SPECIFIC (WINGS & INTERACTIVE GRID)
+   ========================================= */
+.fonts-layout-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #000000;
+    padding: 100px 0; 
+    overflow: visible; 
+}
+
+/* Fixed Grid Container */
+.content-section {
+    width: 55%; 
+    min-width: 700px;
+    position: relative;
+    background-color: #ffffff; 
+    border: 1px solid #000000; 
+    z-index: 2; 
+}
+
+/* Wing Visibility, Size, and Animation */
+.wing-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 43vw; 
+    max-width: 1000px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 1; 
+    transition: opacity 0.5s ease;
+    transform-origin: center center; 
+}
+
+.wing-left { left: -5%; }
+.wing-right { right: -17%; }
+
+.wing-container img {
+    width: 100%;
+    height: auto;
+}
+
+/* Interactive Wing Action */
+.wing-left { 
+    left: -5%; 
+    animation: subtleFlap 2.5s ease-in-out infinite;
+}
+
+.wing-right { 
+    right: -17%; 
+    animation: subtleFlapMirrored 2.5s ease-in-out infinite; 
+}
+
+/* Clean Interior Grid Structure */
+.fonts-cross-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+}
+
+.font-cell {
+    padding: 80px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.font-cell:nth-child(even) {
+    border-left: 1px solid #000000; 
+}
+
+.font-cell:nth-last-child(n+3) {
+    border-bottom: 1px solid #000000; 
+}
+
+.font-name {
+    font-size: 80px;
+    margin: 0 0 20px 0;
+    line-height: 1;
+    color: #000000;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+.font-name:hover {
+    color: transparent;
+    -webkit-text-stroke: 1px #000000;
+}
+
+.font-cormorant {} 
+
+.font-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333333;
+    max-width: 350px;
+    margin: 0;
+}
+
+/* Specific Google Fonts Typography */
+.font-ballet { font-family: 'Ballet', cursive; font-weight: 400; text-transform: none; }
+.font-urbanist { font-family: 'Urbanist', sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -2px; }
+.font-cormorant { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-style: italic; text-transform: none; }
+.font-spacemono { font-family: 'Space Mono', monospace; font-weight: 700; text-transform: uppercase; font-size: 60px; letter-spacing: -3px; }
+
+
+/* --- BRAND ANALYSIS ZIG-ZAG GRID --- */
+.brand-analysis-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid #000000;
+}
+
+.brand-text-col {
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.brand-text-col.grey-bg {
+    background-color: #F4F4F4;
+}
+
+.brand-image-col {
+    border-left: 1px solid #000000;
+    overflow: hidden;
+    background-color: #f4f4f4;
+}
+
+/* Reversing the order for even rows to create the zig-zag effect */
+.brand-analysis-row:nth-child(even) .brand-image-col {
+    order: -1; /* Moves the image to the left side */
+    border-left: none;
+    border-right: 1px solid #000000;
+}
+
+/* Forces all images to act as perfect responsive squares */
+.brand-image-col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1; 
+    display: block;
+}
+
+.brand-name {
+    font-size: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 25px 0;
+    letter-spacing: -2px;
+    color: #000000;
+}
+
+.brand-desc {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333333;
+    margin-bottom: 40px;
+}
+
+.brand-link {
+    align-self: flex-start; /* Keeps the button from stretching */
+    text-decoration: none;
+    text-align: center;
+}
+
+/* --- PERSONAL IDENTITY SECTION --- */
+.personal-identity-row {
+    padding: 120px 40px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.svg-container {
+    margin-bottom: 60px;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Target the SVG to make sure it scales nicely */
+.svg-container svg {
+    width: 100%;
+    height: auto;
+}
+
+.personal-text {
+    max-width: 900px;
+}
+
+/* Mobile adaptation for the grid */
+@media (max-width: 900px) {
+    .brand-analysis-row {
+        grid-template-columns: 1fr;
+    }
+    .brand-analysis-row:nth-child(even) .brand-image-col {
+        order: 0;
+        border-right: none;
+    }
+    .brand-image-col {
+        border-left: none;
+        border-top: 1px solid #000000;
+    }
+    .brand-text-col {
+        padding: 50px 30px;
+    }
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.site-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-cell {
+    padding: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-right: 1px solid #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-cell:last-child {
+    border-right: none;
+}
+
+
+/* =========================================
+   EDITORIAL ARTICLE SECTION
+   ========================================= */
+.editorial-article {
+    padding: 120px 40px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.article-headline {
+    font-size: 5vw;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin: 0 0 60px 0;
+    text-align: center;
+    max-width: 1200px;
+    line-height: 1;
+}
+
+.article-columns {
+    max-width: 1000px; /* Идеально совпадает с шириной сетки на странице fonts.html */
+    column-count: 2;
+    column-gap: 60px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333333;
+}
+
+.article-columns p {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* Огромная заглавная буква в начале текста (Drop Cap) */
+.first-letter {
+    float: left;
+    font-size: 90px;
+    line-height: 0.8;
+    font-weight: 800;
+    margin-right: 15px;
+    margin-top: 8px;
+    color: #000000;
+}
+
+/* Адаптация для мобильных экранов: текст в одну колонку */
+@media (max-width: 768px) {
+    .article-columns {
+        column-count: 1;
+    }
+    .article-headline {
+        font-size: 40px;
+    }
+}
+/* =========================================
+   UPDATED INTERACTIVE COLOR MODULE (Aesthetic & Contrast)
+   ========================================= */
+.interactive-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid #000000;
+}
+
+.interactive-visual {
+    padding: 80px 40px;
+    border-right: 1px solid #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.letter-square {
+    width: 250px;
+    height: 250px;
+    background-color: #F4F4F4; /* Default grey background */
+    border: 1px solid #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease; /* Smooth background change */
+}
+
+.changing-letter {
+    font-size: 180px;
+    font-weight: 800;
+    line-height: 1;
+    color: transparent; /* Initially transparent to show stroke */
+    -webkit-text-stroke: 2px #000000; /* Black outline (image 3) */
+    transition: color 0.3s ease, -webkit-text-stroke 0.3s ease; /* Smooth text changes */
+}
+
+/* Base class for when the letter has a solid color, not an outline */
+.letter-solid {
+    -webkit-text-stroke: 0px transparent;
+}
+
+.brutalist-btn {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 15px 40px;
+    border: 1px solid #000000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.brutalist-btn:hover {
+    background-color: #FFCDE6; /* Brand pink on hover */
+    color: #000000;
+}
+
+.interactive-text {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #F4F4F4;
+}
+
+.interactive-text h3 {
+    font-size: 40px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    letter-spacing: -1px;
+    color: #000000;
+}
+
+.interactive-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333333;
+    margin: 0;
+}
+
+/* Mobile adaptation */
+@media (max-width: 768px) {
+    .interactive-section { grid-template-columns: 1fr; }
+    .interactive-visual { border-right: none; border-bottom: 1px solid #000000; }
+}
+/* =========================================
+   PERSONAL IDENTITY & HEART ANIMATION
+   ========================================= */
+.personal-identity-row {
+    padding: 120px 20px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid #000000;
+}
+
+.nesti-interactive-area {
+    position: relative;
+    cursor: crosshair;
+    margin-bottom: 80px;
+    z-index: 10;
+    width: 100%; /* Контейнер на всю ширину */
+    display: flex;
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+}
+
+/* Огромный логотип строго по центру */
+.nesti-inline-svg {
+    width: 100%;
+    max-width: 900px; /* Сделали логотип массивным */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Жесткое центрирование */
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nesti-interactive-area:hover .nesti-inline-svg {
+    transform: scale(1.03); /* Легкое увеличение при наведении */
+}
+
+.personal-text-clean {
+    max-width: 800px;
+}
+
+.personal-text-clean .brand-name {
+    font-size: 40px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 25px;
+    color: #000000;
+}
+
+.personal-text-clean .brand-desc {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #444444;
+    margin: 0;
+}
+
+/* Магия разлетающихся сердец */
+.floating-heart {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    pointer-events: none;
+    z-index: 9999;
+    animation: flyHeart 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.floating-heart svg {
+    width: 100%;
+    height: 100%;
+    fill: #FFCDE6;
+}
+
+@keyframes flyHeart {
+    0% { transform: translate(-50%, -50%) scale(0) rotate(0deg); opacity: 1; }
+    15% { opacity: 1; }
+    100% { transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.5) rotate(var(--rot)); opacity: 0; }
+}

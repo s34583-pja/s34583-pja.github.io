@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typography & Form | Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,33 +13,66 @@
         <nav class="nav-links">
             <a href="fonts.html" class="outline-link">Fonts</a>
             <a href="custom.html" class="outline-link">Custom</a>
-            <a href="life.html" class="outline-link">Apps</a>
+            <a href="apps.html" class="outline-link">Apps</a>
         </nav>
     </header>
 
-    <main>
-        <section class="hero-banner">
-            <h1 class="giant-title">Variable<br>Font</h1>
-        </section>
+    <section class="hero-banner">
+        <h1 class="giant-title">Typography<br>is the Soul</h1>
+    </section>
 
-        <section class="info-grid">
-            <div class="info-cell">
-                <span class="cell-label">▼ Concept</span>
-                <p>Typography is the silent voice of design. It is the architectural discipline of arranging type to make written language legible and appealing.</p>
-            </div>
-            <div class="info-cell">
-                <span class="cell-label">▼ Research</span>
-                <p>This project explores the fundamental structures of letterforms, the anatomy of glyphs, and the impact of typographic choices on visual hierarchy.</p>
-            </div>
-            <div class="info-cell action-cell">
-                <a href="fonts.html" class="explore-link">Explore</a>
-            </div>
-        </section>
+    <section class="info-grid">
+        <div class="info-cell">
+            <span class="cell-label">▼ Concept</span>
+            <p>Typography is the silent voice of design. It is the architectural discipline of arranging type to make written language legible and appealing.</p>
+        </div>
+        <div class="info-cell">
+            <span class="cell-label">▼ Research</span>
+            <p>This project explores the fundamental structures of letterforms, the anatomy of glyphs, and the impact of typographic choices on visual hierarchy.</p>
+        </div>
+        <div class="info-cell action-cell">
+            <a href="fonts.html" class="explore-link">Explore</a>
+        </div>
+    </section>
+
+    <section class="dark-statement">
+        <h2>"Good typography is like a clear glass goblet."</h2>
+        <p>— Beatrice Warde, The Crystal Goblet</p>
+    </section>
+
+    <section class="editorial-article">
+        <h2 class="article-headline">The Architecture of Written Language</h2>
         
-        <section class="bottom-massive-text">
-            <h2>Structures are building</h2>
-        </section>
-    </main>
+        <div class="article-columns">
+            <p><span class="first-letter">W</span>hen you read these words, you hear an inner voice. But have you ever wondered what it sounds like? Fonts are the clothing for words; they represent their tone, posture, and facial expressions. Typography works like an invisible director—setting the mood before a person even processes the meaning of the very first phrase. The exact same sentence written in a strict, geometric sans-serif versus a casual script will feel entirely different.</p>
+            
+            <p>Letters are not just symbols; they are complex architectural structures. Every serif, terminal, counter, and stem obeys strict laws of geometry and optics. Kerning can either save or completely destroy a layout. Letters placed too close turn into an unreadable mess, while letters placed too far apart cause the word to fall apart entirely. Leading determines whether the reader suffocates from text density or naturally flows to the next line. The perfect balance creates the "texture of type."</p>
+            
+            <p>The history of this discipline is a story of technological evolution. It all began in the 15th century with Johannes Gutenberg’s movable metal type, where every single letter was a physical piece of lead. For centuries, punchcutters manually cast these forms, adjusting metal characters to fit the physical constraints of the heavy printing press.</p>
+            
+            <p>The digital age moved letters onto screens, transforming them into pixels and vectors. But the real revolution is happening right now, and its name is Variable Fonts. In the past, every single style variation required a completely separate, heavy file. Today, a single variable font acts as a responsive, living organism. Using pure code, a designer can smoothly alter weight, width, slant, and optical size in real-time, allowing typography to dynamically react to human interaction.</p>
+        </div>
+    </section>
+
+    <section class="interactive-section">
+        <div class="interactive-visual">
+            <div class="letter-square" id="magicSquare" style="cursor: pointer;" onclick="changeColorCombo()">
+                <span class="changing-letter" id="magicLetter">A</span>
+            </div>
+            <button class="brutalist-btn" onclick="changeColorCombo()">Change Color</button></div>
+        
+        <div class="interactive-text">
+            <h3>Color in Context</h3>
+            <p>Color profoundly alters the psychological weight and legibility of typography. Click the button (or the letter itself) to see how shifting the relationship between the glyph and its container changes perception. Notice how high contrast creates authority, clashing vibrant tones create intense visual vibration, and specific palette choices completely redefine the emotional resonance of the character.</p>
+        </div>
+    </section>
+
+    <section class="marquee-wrapper">
+        <div class="marquee-content">
+            <span>STRUCTURES ARE BUILDING // TYPOGRAPHY IS ARCHITECTURE // FORM FOLLOWS FUNCTION // VARIABLE FONTS FLUIDITY //&nbsp;</span>
+            <span>STRUCTURES ARE BUILDING // TYPOGRAPHY IS ARCHITECTURE // FORM FOLLOWS FUNCTION // VARIABLE FONTS FLUIDITY //&nbsp;</span>
+        </div>
+    </section>
 
     <footer class="site-footer">
         <div class="footer-cell">© 2026 Anastasia Semerenko</div>
@@ -48,5 +80,35 @@
         <div class="footer-cell">PJATK Project</div>
     </footer>
 
+    <script>
+        const letter = document.getElementById('magicLetter');
+        const square = document.getElementById('magicSquare');
+        
+        /* Vibrant and high-contrast color combinations inspired by the design palette */
+        const colorCombos = [
+            { text: '#000000', bg: '#F4F4F4' }, // Default: Black letter on Light Grey
+            { text: '#D8F382', bg: '#EB4213' }, // Combo 1: Light Green letter on Red background
+            { text: '#EB4213', bg: '#FF99DC' }, // Combo 2: Red letter on Pink background
+            { text: '#FF99DC', bg: '#826DEE' }, // Combo 3: Pink letter on Purple background
+            { text: '#826DEE', bg: '#D8F382' }  // Combo 4: Purple letter on Light Green background
+        ];
+        
+        let currentStep = 0;
+
+        function changeColorCombo() {
+            currentStep++;
+            // Loop back to the first combination if the end of the array is reached
+            if (currentStep >= colorCombos.length) {
+                currentStep = 0;
+            }
+            
+            // Simultaneously update both the text color and the block background color
+            letter.style.color = colorCombos[currentStep].text;
+            square.style.backgroundColor = colorCombos[currentStep].bg;
+            
+            // Explicitly disable text outlines to preserve clean solid color interaction
+            letter.style.webkitTextStroke = '0px transparent';
+        }
+    </script>
 </body>
 </html>
